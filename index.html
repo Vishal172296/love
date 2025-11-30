@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Priya ❤️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pink: #ff6f91;
+      --rose: #ffd6e0;
+      --dark: #2e2e2e;
+      --light: #fff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--dark);
+      background: linear-gradient(135deg, #ffe6f0, #fff);
+      min-height: 100vh;
+    }
+    header {
+      padding: 80px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      color: var(--pink);
+    }
+    header p {
+      margin-top: 16px;
+      font-size: 1.05rem;
+      max-width: 680px;
+      margin-inline: auto;
+      line-height: 1.7;
+    }
+    .container { max-width: 1000px; margin: auto; padding: 20px; }
+    .card {
+      background: var(--light);
+      border-radius: 18px;
+      padding: 28px;
+      margin: 20px 0;
+      box-shadow: 0 12px 30px rgba(0,0,0,.08);
+    }
+    .card h2 {
+      color: var(--pink);
+      margin-bottom: 12px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+    }
+    .reasons {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .reason {
+      background: var(--rose);
+      padding: 18px;
+      border-radius: 14px;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .reason:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 20px rgba(0,0,0,.12);
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 14px;
+    }
+    .photo {
+  height: 220px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #ffd6e0;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+  transition: transform .3s ease;
+}
+
+.photo img:hover {
+  transform: scale(1.08);
+}
+    .letter {
+      line-height: 1.8;
+      font-size: 1.02rem;
+    }
+    .cta {
+      text-align: center;
+      margin: 40px auto 10px;
+    }
+    .btn {
+      background: var(--pink);
+      color: white;
+      border: none;
+      padding: 14px 26px;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background .25s ease, transform .2s ease;
+    }
+    .btn:hover { background: #ff4f7d; transform: scale(1.06); }
+    footer {
+      text-align: center;
+      padding: 30px 10px 50px;
+      font-size: .9rem;
+      opacity: .75;
+    }
+  
+/* Fullscreen modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 16px;
+}
+.modal.show { display: flex; }
+
+/* Captions */
+
+
+/* Proposal section */
+.proposal { text-align: center; padding: 40px 20px; }
+.proposal h2 { color: var(--pink); }
+
+
+/* Floating hearts */
+.heart{
+  position: fixed; bottom:-10px; font-size:20px; animation: float 6s linear; color:#ff6f91; z-index:999;
+}
+@keyframes float{
+  0%{transform:translateY(0);opacity:1}
+  100%{transform:translateY(-100vh);opacity:0}
+}
+
+/* Night mode */
+body.night{
+  background: #0f0f1a;
+  color:#eee;
+}
+body.night .card{background:#1c1c2e;color:#eee}
+body.night .caption{color:#ccc}
+
+</style>
+</head>
+<body>
+  <header>
+    <h1>For You, Priya ❤️</h1>
+    <p>
+      This is just a small reflection of how big my feelings are for you, Priya.
+      Every smile of yours means the world to me, and every moment with you feels like home.
+    </p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Why I Love You, Priya</h2>
+      <div class="reasons">
+        <div class="reason">You make my worst days feel lighter.</div>
+        <div class="reason">Your smile is my favorite view.</div>
+        <div class="reason">You understand me without words.</div>
+        <div class="reason">Life feels beautiful with you in it.</div>
+        <div class="reason">You inspire me to be better every day.</div>
+        <div class="reason">You are my peace and my joy.</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Our Memories</h2>
+      <p style="margin-bottom: 14px;">(Replace these boxes with our photos 💕)</p>
+      <div class="gallery" id="slideshow">
+  <div class="photo"><img src="images/memory1.png" onclick="openModal(this.src)"></div>
+  <div class="photo"><img src="images/memory2.png" onclick="openModal(this.src)"></div>
+  <div class="photo"><img src="images/memory3.png" onclick="openModal(this.src)"></div>
+  <div class="photo"><img src="images/memory4.png" onclick="openModal(this.src)"></div>
+  <div class="photo"><img src="images/memory5.png" onclick="openModal(this.src)"></div>
+  <div class="photo"><img src="images/memory6.png" onclick="openModal(this.src)"></div>
+</div>
+    </section>
+
+    <section class="card">
+      <h2>A Letter From My Heart</h2>
+      <p class="letter">
+        Hey Priya,<br/><br/>
+        I don’t say this enough, but you mean more to me than words can ever explain.
+        With you, even the simplest moments feel special. I promise to stand by you,
+        cheer for you, and hold your hand through every high and low. No matter where life takes us,
+        my heart will always choose you.
+        <br/><br/>
+        Always yours, Priya ❤️
+      </p>
+    </section>
+
+    <div class="cta">
+  <button class="btn" onclick="alert('I Love You ❤️')">Click for a Surprise</button>
+  <button class="btn" style="margin-left:10px" onclick="toggleNight()">🌙 Night Mode</button>
+  <button class="btn" style="margin-left:10px" onclick="shareLove()">💬 Share</button>
+</div>
+  <section class="card proposal">
+  <h2>One Question For You, Priya 💍</h2>
+  <p style="margin:16px 0">Will you be mine forever?</p>
+  <button class="btn" onclick="alert('She said YES ❤️')">YES</button>
+</section>
+
+</main>
+
+<!-- Background Music -->
+<audio id="bgMusic" loop>
+  <source src="music/love.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Image Modal -->
+<div class="modal" id="imgModal" onclick="closeModal()">
+  <img id="modalImg">
+</div>
+
+<script>
+  function openModal(src) {
+    document.getElementById('modalImg').src = src;
+    document.getElementById('imgModal').classList.add('show');
+  }
+  function closeModal() {
+    document.getElementById('imgModal').classList.remove('show');
+  }
+
+  // Floating hearts
+  setInterval(()=>{const h=document.createElement('div');h.className='heart';h.innerText='❤';h.style.left=Math.random()*100+'vw';document.body.appendChild(h);setTimeout(()=>h.remove(),6000)},700);
+
+  // Slideshow auto zoom
+  let slide=0;const imgs=document.querySelectorAll('.gallery img');
+  setInterval(()=>{imgs.forEach(i=>i.style.opacity='.4');imgs[slide].style.opacity='1';slide=(slide+1)%imgs.length},3000);
+
+  function toggleNight(){document.body.classList.toggle('night');}
+
+  function shareLove(){
+    const text='This website is made just for you ❤️';
+    const url=location.href;
+    window.open(`https://wa.me/?text=${encodeURIComponent(text+' '+url)}`,'_blank');
+  }
+
+  function playMusic() {
+    document.getElementById('bgMusic').play();
+  }
+</script>
+
+<button class="btn" style="position:fixed;bottom:20px;right:20px;z-index:999" onclick="playMusic()">
+🎵 Play Music
+</button>
+
+  <footer>
+    Made with ❤️ just for you
+  </footer>
+</body>
+</html>
